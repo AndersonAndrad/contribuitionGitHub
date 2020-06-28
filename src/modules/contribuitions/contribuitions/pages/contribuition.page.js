@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 
 // styles
 import style from './contribuition.styles';
+import { AntDesign } from '@expo/vector-icons';
 
 export default function contribuition() {
   const navigation = useNavigation();
@@ -14,6 +15,11 @@ export default function contribuition() {
 
   return (
     <View style={style.container}>
+      <View style={style.moreContainer}>
+        <TouchableOpacity style={style.moreButton}>
+          <AntDesign name="pluscircle" size={24} color="black" />
+        </TouchableOpacity>
+      </View>
       <View style={style.headerContainer}>
         <Text style={style.headerUserNamer}>Wellcome AndersonAndrad</Text>
         <Text style={style.headerYear}>Year: 2020</Text>
