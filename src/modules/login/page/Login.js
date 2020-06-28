@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 // styles
 import style from './Login.styles';
 
 export default function Login() {
   const [userName, setUserName] = useState('');
+  const navigate = useNavigation();
+
+  function navigateToContribuitions() {
+    navigate.navigate('contribuition');
+  }
 
   return (
     <View style={style.container}>
@@ -25,7 +31,10 @@ export default function Login() {
         />
       </View>
       <View style={style.buttonContainer}>
-        <TouchableOpacity style={style.button}>
+        <TouchableOpacity
+          style={style.button}
+          onPress={navigateToContribuitions}
+        >
           <Text style={style.textButton}>Login</Text>
         </TouchableOpacity>
       </View>
